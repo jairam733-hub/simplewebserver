@@ -95,7 +95,8 @@ httpd.serve_forever()
 
 ## OUTPUT:
 
-![image](https://github.com/user-attachments/assets/81b12071-0755-4809-9c6c-b5d7f7ba1d42)
+<img width="1918" height="997" alt="364058258-81b12071-0755-4809-9c6c-b5d7f7ba1d42" src="https://github.com/user-attachments/assets/74fa6db1-5987-406c-8292-e45ad8362bc4" />
+
 
 
 
