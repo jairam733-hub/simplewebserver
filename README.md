@@ -1,10 +1,16 @@
+# Name:JAIRAM J.
+# Date:22-09-2025
+
+
+
+
 # EX01 Developing a Simple Webserver
-## Date:
 
 ## AIM:
-To develop a simple webserver to serve html pages and display the Device Specifications of your Laptop.
+To develop a simple webserver to serve html pages.
 
 ## DESIGN STEPS:
+
 ### Step 1: 
 HTML content creation.
 
@@ -15,30 +21,83 @@ Design of webserver workflow.
 Implementation using Python code.
 
 ### Step 4:
-Import the necessary modules.
+Serving the HTML pages.
 
 ### Step 5:
-Define a custom request handler.
+Testing the webserver.
 
-### Step 6:
-Start an HTTP server on a specific port.
-
-### Step 7:
-Run the Python script to serve web pages.
-
-### Step 8:
-Serve the HTML pages.
-
-### Step 9:
-Start the server script and check for errors.
-
-### Step 10:
-Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
+```
+from http.server import HTTPServer, BaseHTTPRequestHandler
+content = """
+<html>
+     <title> Software Companies Revenue </title>
+     <body>
+           <table border = "2" cellspacing = "10" cellpading = "6">
+              <caption>TOP SIX REVENUE SOFTWARE COMPANIES </caption>
+              <tr>
+                  <th>S.NO</th>
+                  <th>COMPANY</th>			
+                  <th>REVENUE</th>
+              </tr>
+              <tr>
+                  <td>1</td>
+                  <td>Microsoft</td>
+                  <td>65 Billion</td>
+             </tr>
+             <tr>
+                  <td>2</td>
+                  <td>Oracle</td>
+                  <td>29.6 Billion</td>
+             </tr>
+             <tr>
+                  <td>3</td>
+                  <td>IBM</td>
+                  <td>29.1Billion</td>
+            </tr>
+            <tr>
+                  <td>4</td>
+                  <td>SAP</td>
+                  <td>6.4 Billion</td>
+            </tr>
+            <tr>
+                  <td>5</td>
+                  <td>Symantic</td>
+                  <td>5.6 Billion</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Adobe Inc</td>
+                <td>19.8 Billion</td>
+          </tr>
+           
+            
+        
 
+       </table>
+    </body>
+</html>
+"""
+class myhandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        print("request received")
+        self.send_response(200)
+        self.send_header('content-type', 'text/html; charset=utf-8')
+        self.end_headers()
+        self.wfile.write(content.encode())
+server_address = ('',8000)
+httpd = HTTPServer(server_address,myhandler)
+print("my webserver is running...")
+httpd.serve_forever()
+
+```
 
 ## OUTPUT:
+
+![image](https://github.com/user-attachments/assets/81b12071-0755-4809-9c6c-b5d7f7ba1d42)
+
+
 
 
 ## RESULT:
